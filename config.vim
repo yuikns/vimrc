@@ -134,7 +134,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " https://github.com/Xuyuanp/nerdtree-git-plugin
-let g:NERDTreeIndicatorMapCustom = {
+" let g:NERDTreeIndicatorMapCustom = {
+" 
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
@@ -147,10 +149,16 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+" https://stackoverflow.com/questions/3961859/how-to-copy-to-clipboard-in-vim
+" use the following command to check the supportness
+" vim --version|grep .xterm_clipboard -o
+"
+set clipboard=unnamed
 
 
-
-
+" run gofmt on save
+"
+"au BufWritePost *.go !gofmt -w %
 
 
 
